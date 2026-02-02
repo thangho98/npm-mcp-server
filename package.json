@@ -5,7 +5,8 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "nginx-proxy-manager-mcp": "dist/index.js"
+    "nginx-proxy-manager-mcp": "dist/index.js",
+    "npm-cli": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc",

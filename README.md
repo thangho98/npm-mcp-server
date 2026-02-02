@@ -164,6 +164,47 @@ Create a TCP stream from port 3306 forwarding to mysql-server:3306
 List all SSL certificates and tell me which ones are expiring soon
 ```
 
+## CLI Tool
+
+A standalone CLI tool is also available for direct command-line usage or integration with OpenClaw skills.
+
+### CLI Usage
+
+```bash
+# Set environment variables
+export NPM_URL="http://your-npm-host:81"
+export NPM_EMAIL="admin@example.com"
+export NPM_PASSWORD="your-password"
+
+# Get status
+node dist/cli.js status
+
+# List proxy hosts
+node dist/cli.js proxy-hosts list
+
+# Create a proxy host
+node dist/cli.js proxy-hosts create --domains "app.example.com" --forward-host "192.168.1.100" --forward-port 8080
+
+# Delete a proxy host
+node dist/cli.js proxy-hosts delete 15
+
+# List certificates
+node dist/cli.js certificates list
+
+# List streams
+node dist/cli.js streams list
+```
+
+### OpenClaw Skill
+
+For OpenClaw users, copy the `skills/nginx-proxy-manager` folder to `~/.openclaw/skills/`:
+
+```bash
+cp -r skills/nginx-proxy-manager ~/.openclaw/skills/
+```
+
+Then set the required environment variables and use the skill in OpenClaw.
+
 ## Development
 
 ```bash
